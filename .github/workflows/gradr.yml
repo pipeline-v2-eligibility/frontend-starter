@@ -44,8 +44,8 @@ jobs:
     - name: Test Frontend App
       run: |
         cd audits
-        npx playwright install --with-deps chromium
-        npx playwright test
+        npm run frontend-install-playwright
+        npm run audit-frontend
 
     # - name: Report Audits
     #   if: always()

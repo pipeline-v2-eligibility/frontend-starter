@@ -8,3 +8,8 @@ Build and deploy a very simple frontend app for paginated data, that does the fo
 
 See full details and instructions (including an interesting paging caveat) in this [Google Doc](https://docs.google.com/document/d/1hGXXPykXqO6b9Z2pm55-2T83AIA39cQ3FQxtbGkoR5Y)
 
+#### Note
+
+1.  This comes as a purely HTML/CSS/JS project with [Percel](https://parceljs.org/docs/) handling build and transpilation. 
+2.  We strongly recommend you complete the challenge with this setup, and only use a framework (like Vue/react/Angular) only if absolutely neccesary and for which you will be required to provide reasonable justification as part of your evaluation
+

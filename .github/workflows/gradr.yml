@@ -40,20 +40,20 @@ jobs:
         cd audits
         git pull --no-rebase
         npm install
+        npm run frontend-install-playwright
 
     - name: Test Frontend App
       run: |
         cd audits
-        npm run frontend-install-playwright
         npm run audit-frontend
 
-    # - name: Report Audits
-    #   if: always()
-    #   uses: pipeline-v2-eligibility/jest-to-sheets@v1
-    #   with:
-    #     track: 'frontend'
-    #     server: https://api.sheetson.com/v2/sheets
-    #     sheetid: 1TpZp5pXOGDNhODDvbbjEffXopljG0MPdLxl0RVFY3yo
-    #     token: HXlur8K20ZpoB-6FNsnSUtj2kGoDqCDHDl8vZBdLtQCv9UFOVhMsM2IBwD8
-    #     properties: ${{ github.workspace }}/properties.json
+    - name: Report Audits
+      if: always()
+      uses: pipeline-v2-eligibility/jest-to-sheets@v2
+      with:
+        track: 'frontend'
+        server: https://api.sheetson.com/v2/sheets
+        sheetid: 1TpZp5pXOGDNhODDvbbjEffXopljG0MPdLxl0RVFY3yo
+        token: HXlur8K20ZpoB-6FNsnSUtj2kGoDqCDHDl8vZBdLtQCv9UFOVhMsM2IBwD8
+        properties: ${{ github.workspace }}/properties.json
         

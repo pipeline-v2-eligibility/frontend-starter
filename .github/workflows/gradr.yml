@@ -37,15 +37,15 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        npm install --location=global yarn
         cd audits
         git pull --no-rebase
-        yarn install
+        npm install
 
     - name: Test Frontend App
       run: |
         cd audits
-        yarn audit-frontend
+        npx playwright install --with-deps chromium
+        npx playwright test
 
     # - name: Report Audits
     #   if: always()
